@@ -16,7 +16,6 @@ When we have multiple replicas, we need to ensure that all the data ends up on a
 Every write to the database must be processed by all the replicas, otherwise they won't contain the same data. 
 
 The most common solution would be the [[Leader-Based Replication]] (aka *active/passive* or *master-slave replication*)
-
 ## Setting up new followers
 
 When adding new followers we need to ensure that the new follower has an accurate copy of the leader's data.
@@ -73,6 +72,8 @@ This can be solved using [[Monotonic Reads]]
 
 ![[Pasted image 20250622233016.png]]
 
-Preventing this kind of anomaly requires another type of guarantee: [[Consistent prefix reads]]
-reads . This guarantee says that if a sequence of writes happens in a certain order,
+Preventing this kind of anomaly requires another type of guarantee: [[Consistent prefix reads]] . This guarantee says that if a sequence of writes happens in a certain order,
 then anyone reading those writes will see them appear in the same order.****
+
+
+Another strategy worth discussing is the [[Multi-Leader Replication]].
