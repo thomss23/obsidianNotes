@@ -4,3 +4,9 @@ In effect, each partition is a small database of its own, although the database 
 
 Why do we want to partition data?
 For *scalability*. Different partitions can be placed on different nodes in a shared-nothing cluster. Thus, a large dataset can be distributed across many disks, and the query load can be distributed across many processors.
+
+![[Pasted image 20250627135023.png]]
+
+
+## Partitioning Key-Value Data
+
