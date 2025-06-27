@@ -76,4 +76,4 @@ Preventing this kind of anomaly requires another type of guarantee: [[Consistent
 then anyone reading those writes will see them appear in the same order.****
 
 
-Another strategy worth discussing is the [[Multi-Leader Replication]].
+Another strategy worth discussing is the [[Multi-Leader Replication]]. The other would be [[Leaderless Replication]]

@@ -1,0 +1,1 @@
+Some data store systems abandon the idea of a leader that accepts writes and allow any replica to directly accept writes from the clients.
