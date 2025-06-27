@@ -10,7 +10,7 @@ Why should you distribute a database across multiple machines:
 - *Shared-nothing architectures* (aka horizontal scaling) - each machine or virtual machine running the database software is called a node. Each node uses its CPUs RAN and disk independently. Coordination between the nodes is done at the software level using a conventional network.
 
 
-### [[Replication]] vs Partitioning
+### [[Replication]] vs [[Partitioning]]
 
 * Replication:
 	- keeping a copy of the same data on several different nodes, potentially in different locations
