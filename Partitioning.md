@@ -25,3 +25,10 @@ One way is to assign a continuous range of keys (from some minimum to some maxim
 Once you have a suitable hash functions for keys, you can assign each partition a range of hashes (rather than a range of keys), and every key whose hash falls within a partition’s range will be stored in that partition. This technique is good at distributing keys fairly among the partitions. The partition boundaries can be evenly spaced, or they can be chosen pseudorandomly (in which
 case the technique is sometimes known as *consistent hashing*).
 
+## Skewed workloads and relieving hot spots
+
+You can reduce skewness from the application code. Example: You can add a random number to the beginning or the end of key to split writes across 100 different keys.
+
+## Partitioning Secondary Indexes by Document
+
+
