@@ -29,6 +29,17 @@ case the technique is sometimes known as *consistent hashing*).
 
 You can reduce skewness from the application code. Example: You can add a random number to the beginning or the end of key to split writes across 100 different keys.
 
-## Partitioning Secondary Indexes by Document
+We can partition secondary indexes by:
+- document
+- term partitioning
+
+## Rebalancing
+
+This refers to moving load from one node in the cluster to the other.
+
+When doing rebalancing, it is usually expected to meet some minimum requirements:
+- after rebalancing, the load (data storage, read and write requests) should be shared fairly between the nodes
+- while rebalancing, the db should continue accepting reads and writes
+- no more data than necessary should be moved between nodes
 
 
