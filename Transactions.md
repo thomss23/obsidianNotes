@@ -45,4 +45,14 @@ When?
 
 ## Handling errors and aborts
 
-test
+=====
+
+## Transaction Isolation types:
+
+### Read committed: 
+- when reading from the db, you will only see data that has been committed (no dirty reads)
+- when writing to the db, you will only overwrite data that has been committed (no dirty writes)
+
+### Snapshot isolation
+The idea is that each transaction reads from a consistent snapshot of the database—that is, the transaction sees all the data that was committed in the database at the start of the transaction.
+Even if the data is subsequently changed by another transaction, each transaction sees only the old data from that particular point in time.
