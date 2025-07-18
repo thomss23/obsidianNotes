@@ -99,3 +99,14 @@ If the database doesn't support such atomic operations, it is the duty of the ap
 ### Pros and cons of stored procedures
 
 ![[Pasted image 20250718163327.png]]
+
+###  Two phase locking
+
+![[Pasted image 20250718164319.png]]
+
+**Implementing 2PL**
+
+![[Pasted image 20250718164423.png]]
+
+
+### Index Range Locks
