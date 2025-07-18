@@ -56,3 +56,46 @@ When?
 ### Snapshot isolation
 The idea is that each transaction reads from a consistent snapshot of the database—that is, the transaction sees all the data that was committed in the database at the start of the transaction.
 Even if the data is subsequently changed by another transaction, each transaction sees only the old data from that particular point in time.
+
+### Rules for observicing a consistent snaphot
+Put another way, an object is visible if both of the following conditions are true:
+• At the time when the reader’s transaction started, the transaction that created the
+object had already committed.
+• The object is not marked for deletion, or if it is, the transaction that requested
+deletion had not yet committed at the time when the reader’s transaction started
+
+
+### Preventing Lost Updates
+
+The lost update problem occurs if an app reads some value from the db, modifies it and writes back the modified value. IF 2 transactions do this concurrently, one of the modifications can be lost, because the second write does not include the first modification.
+
+**Solutions:**
+
+#### Atomic write operations
+
+Many databases provide atomic update operations, removing the need to implement read-modify-write cycles in application code.
+
+They are usually implemented by taking an exclusive lock on the object when it is read so that no other transaction can read it until the update has been applied. This is called *cursor stability*.
+
+Another option would be to simply force all atomic operations to be executed on a single thread.
+
+
+#### Explicit locking
+
+If the database doesn't support such atomic operations, it is the duty of the application instead to explicitly lo ck objects that are going to be updated.
+
+
+### Write Skews
+
+![[Pasted image 20250718161018.png]]![[Pasted image 20250718161942.png]]
+
+![[Pasted image 20250718162141.png]]
+
+### Serializability
+
+![[Pasted image 20250718162357.png]]
+
+
+### Pros and cons of stored procedures
+
+![[Pasted image 20250718163327.png]]
